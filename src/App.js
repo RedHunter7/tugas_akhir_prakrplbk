@@ -2,6 +2,7 @@ import React, {useEffect, useState } from 'react'
 import { Box, Flex } from 'rebass'
 import PostCard from './components/post-card';
 
+
 function App() {
   const [data, setData] = useState([])
 
@@ -16,6 +17,7 @@ function App() {
         setData(display)
       })
     }, [])
+    
 
   return (
     <Box>
@@ -27,3 +29,5 @@ function App() {
 }
 
 export default App;
+
+
