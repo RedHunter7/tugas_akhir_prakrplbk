@@ -19,4 +19,4 @@ class PostCard extends React.Component {
     }
 }
 
-export default PostCard
+export { PostCard }

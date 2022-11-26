@@ -36,6 +36,10 @@
     ]
   },
   "devDependencies": {
-    "rebass": "^4.0.7"
+    "@rebass/forms": "^4.0.6",
+    "prop-types": "^15.8.1",
+    "react-router-dom": "^6.4.3",
+    "rebass": "^4.0.7",
+    "sweetalert": "^2.1.2"
   }
 }

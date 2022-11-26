@@ -1,29 +1,19 @@
-import React, {useEffect, useState } from 'react'
-import { Box, Flex } from 'rebass'
-import PostCard from './components/post-card';
-
+import React from 'react'
+import { Box } from 'rebass'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { HomePage, CreatePostCardPage } from './pages';
+import { TopNav } from './components/top-navigation';
 
 function App() {
-  const [data, setData] = useState([])
-
-  useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/posts')
-      .then(response => response.json())
-      .then(json => {
-        const fetchData = json
-        const display = fetchData.map(elm => {
-          return <PostCard id={elm.id} title={elm.title} body={elm.body} />
-        })
-        setData(display)
-      })
-    }, [])
-    
-
   return (
     <Box>
-      <Flex flexWrap='wrap' mt='50px' mx={-2} alignItems='center'>
-       { data }
-      </Flex>
+      <BrowserRouter>
+        <TopNav/>
+        <Routes>
+          <Route exact path='/' element={<HomePage/>}/>
+          <Route path='/create-post-card' element={<CreatePostCardPage/>}/>
+        </Routes>
+      </BrowserRouter>
     </Box>
   );
 }
